@@ -25,6 +25,7 @@ stages
 	{
 	steps{
         sh 'echo "this is a testing msg"'
+		sh 'echo ${accessToken}'
 		}
     }
 }
