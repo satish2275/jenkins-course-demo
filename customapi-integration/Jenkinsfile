@@ -15,4 +15,19 @@ def pr = httpRequest customHeaders: [[maskValue: true, name: 'Authorization', va
 for (p in jsonParse(pr.content).values) { 
     println(p.source.branch.name)
 }
-sh 'echo "this is a testing msg"'
+pipeline
+{
+agent any
+stages 
+{
+    
+    stage('continuos download') 
+	{
+	steps{
+        sh 'echo "this is a testing msg"'
+		}
+    }
+}
+}
+
+
